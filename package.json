@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@chainlink/contracts": "^0.5.1",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@types/randomstring": "^1.1.8",
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.12.0",
+    "hardhat-deploy": "^0.11.19",
+    "hardhat-gas-reporter": "^1.0.9",
+    "randomstring": "^1.2.3"
+  },
+  "scripts": {
+    "audit": "hh compile && slither . --solc-remaps '@openzeppelin=node_modules/@openzeppelin' --exclude naming-convention,external-function,low-level-calls"
+  },
+  "overrides": {
+    "@nomicfoundation/hardhat-toolbox": {
+      "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers"
+    }
+  }
+}
